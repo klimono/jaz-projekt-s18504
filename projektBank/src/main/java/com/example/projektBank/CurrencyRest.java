@@ -16,10 +16,14 @@ public class CurrencyRest {
         this.currencyService = currencyService;
     }
 
+    @GetMapping("/cena")
+    public String zloto(){
+        return currencyService.ceny_zlota();
+    }
     @GetMapping("/{st_date}/{nd_date}/show")
-    public CurrencyEntity all(@PathVariable String st_date, @PathVariable String nd_date){
+    public CurrencyEntity waluty(@PathVariable String st_date, @PathVariable String nd_date){
 
-        return currencyService.getCurrency(st_date, nd_date);
+        return currencyService.make(st_date, nd_date);
 
     }
 
