@@ -16,9 +16,12 @@ public class CurrencyService {
         this.restTemplate = restTemplate;
     }
 
-    public CurrencyEntity service(String st_date, String nd_date){
+    public CurrencyEntity getCurrency(String st_date, String nd_date){
         CurrencyEntity result = restTemplate.getForEntity("http://api.nbp.pl/api/cenyzlota/"
-                +"/"+st_date+"/"+nd_date+"/", CurrencyEntity.class).getBody();
+                +st_date+"/"+nd_date+"/", CurrencyEntity.class).getBody();
+
+
         return currencyRepo.save(result);
+
     }
 }

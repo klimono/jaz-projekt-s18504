@@ -18,9 +18,12 @@ public class CurrencyEntity {
     String nd_date;
     Date time;
 
-    public CurrencyEntity( String st_date, String nd_date) {
+    float value;
+
+    public CurrencyEntity( String st_date, String nd_date, float value) {
         this.st_date = st_date;
         this.nd_date = nd_date;
+        this.value = value;
         this.time = Date.from(Instant.now());
     }
 
@@ -44,5 +47,11 @@ public class CurrencyEntity {
         this.nd_date = nd_date;
     }
 
+    public float getValue() {
+        return value;
+    }
 
+    public void setValue(float value) {
+        this.value = value;
+    }
 }

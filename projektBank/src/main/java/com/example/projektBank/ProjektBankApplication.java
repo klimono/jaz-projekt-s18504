@@ -17,4 +17,7 @@ public class ProjektBankApplication {
 	public RestTemplate restTemplate(){
 		return new RestTemplate();
 	}
+
+
+
 }
